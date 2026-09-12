@@ -5,9 +5,7 @@ from typing import List, Dict, Any
 RAW_DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "raw-data")
 
 def get_flight_info(origin: str, destination: str, max_price: int = 5000000) -> List[Dict[str, Any]]:
-    """
-    Search for flights matching origin, destination, and budget constraint.
-    """
+
     flight_file = os.path.join(RAW_DATA_DIR, "flight_data.json")
     if not os.path.exists(flight_file):
         return []
@@ -24,9 +22,7 @@ def get_flight_info(origin: str, destination: str, max_price: int = 5000000) -> 
     return results
 
 def get_weather_forecast(city_code: str) -> Dict[str, Any]:
-    """
-    Get weather forecast and outfit recommendation for a city code (e.g. SGN, HAN, DAD).
-    """
+
     weather_file = os.path.join(RAW_DATA_DIR, "weather_data.json")
     if not os.path.exists(weather_file):
         return {"error": "Weather data not found"}
